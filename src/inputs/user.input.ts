@@ -14,3 +14,12 @@ export class UserInput {
   @Field()
   email: string;
 }
+
+@InputType()
+export class CiPasswordInput {
+  @Field()
+  ci: number;
+
+  @Field()
+  password: string;
+}
