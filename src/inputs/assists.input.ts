@@ -20,3 +20,16 @@ export class AssistsInput {
   @Field(() => User_CI)
   user: User_CI;
 }
+
+
+@InputType()
+export class Accept {
+  @Field(() => Meeting_Id,{nullable: true})
+  meeting: Meeting_Id;
+
+  @Field(() => User_CI,{nullable: true})
+  user: User_CI;
+
+  @Field(() =>Boolean)
+  accepted: boolean
+}
