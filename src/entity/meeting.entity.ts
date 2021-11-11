@@ -4,10 +4,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
 import {Assists} from "./assists.entity";
+import {User} from "./user.entity";
 
 @ObjectType()
 @Entity()
@@ -15,6 +17,10 @@ export class Meeting extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn()
   meeting_id: number;
+
+  @Field(() => User)
+  @ManyToOne(() => User, (user) => user.meeting)
+  user: User;
 
   @Field()
   @Column()
