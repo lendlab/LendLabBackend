@@ -16,5 +16,5 @@ export class MeetingResponse {
   errors?: MeetingErrors[];
 
   @Field(() => Meeting, {nullable: true})
-  meeting: Meeting;
+  meeting?: Meeting;
 }
